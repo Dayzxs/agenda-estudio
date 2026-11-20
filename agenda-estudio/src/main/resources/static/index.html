@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estúdio — Agenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <div class="container topo-conteudo">
+        <h1 class="marca">ESTÚDIO<span>.</span></h1>
+        <p class="subtitulo">Agenda de atendimentos</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="painel">
+        <div class="painel-cabecalho">
+            <h2>Novo agendamento</h2>
+        </div>
+
+        <form class="formulario" id="formAgendamento">
+            <div class="campo">
+                <label for="cliente">Cliente</label>
+                <select id="cliente" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="servico">Serviço</label>
+                <select id="servico" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="data">Data e hora</label>
+                <input type="datetime-local" id="data" required>
+            </div>
+            <div class="campo campo-largo">
+                <label for="obs">Observações</label>
+                <input type="text" id="obs" placeholder="Opcional">
+            </div>
+            <button type="submit" class="botao">Agendar</button>
+        </form>
+
+        <p class="mensagem-erro" id="mensagemErro"></p>
+
+    </section>
+
+    <section class="painel">
+        <div class="painel-cabecalho painel-cabecalho-flex">
+            <h2>Agendamentos</h2>
+            <input type="date" id="filtroDia" class="filtro-data">
+        </div>
+
+        <ul class="lista" id="listaAgendamentos"></ul>
+        <p class="aviso" id="aviso"></p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

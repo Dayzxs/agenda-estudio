@@ -1,0 +1,305 @@
+:root {
+    --fundo: #121214;
+    --superficie: #1c1c20;
+    --borda: #2a2a30;
+    --texto: #e8e8ea;
+    --texto-fraco: #8a8a93;
+    --destaque: #c9a227;
+    --verde: #3f9e5d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.topo {
+    border-bottom: 1px solid var(--borda);
+    padding: 40px 0 28px;
+    margin-bottom: 40px;
+}
+
+.marca {
+    font-size: 28px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.marca span {
+    color: var(--destaque);
+}
+
+.subtitulo {
+    color: var(--texto-fraco);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.painel {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 28px;
+}
+
+.painel-cabecalho h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--texto-fraco);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-largo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    font-size: 12px;
+    color: var(--texto-fraco);
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.campo select,
+.campo input {
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    color: var(--texto);
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.campo select:focus,
+.campo input:focus {
+    outline: none;
+    border-color: var(--destaque);
+}
+
+.botao {
+    grid-column: 1 / -1;
+    background-color: var(--destaque);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.botao:hover {
+    opacity: 0.88;
+}
+
+.lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-left: 3px solid var(--destaque);
+    border-radius: 8px;
+    padding: 16px 18px;
+}
+
+.card-hora {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 52px;
+}
+
+.card-hora strong {
+    font-size: 18px;
+}
+
+.card-hora span {
+    font-size: 12px;
+    color: var(--texto-fraco);
+}
+
+.card-info {
+    flex: 1;
+}
+
+.card-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card-info p {
+    font-size: 13px;
+    color: var(--texto-fraco);
+}
+
+.etiqueta {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.etiqueta-agendado {
+    background-color: rgba(201, 162, 39, 0.15);
+    color: var(--destaque);
+}
+
+.etiqueta-concluido {
+    background-color: rgba(63, 158, 93, 0.15);
+    color: var(--verde);
+}
+
+@media (max-width: 600px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+}
+
+.painel-cabecalho-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filtro-data {
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    color: var(--texto);
+    padding: 6px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    margin-bottom: 20px;
+}
+
+.aviso {
+    color: var(--texto-fraco);
+    font-size: 14px;
+    text-align: center;
+    padding: 24px 0;
+}
+
+.etiqueta-cancelado {
+    background-color: rgba(200, 70, 70, 0.15);
+    color: #d66;
+}
+
+.mensagem-erro {
+    display: none;
+    background-color: rgba(200, 70, 70, 0.12);
+    border: 1px solid rgba(200, 70, 70, 0.4);
+    border-left: 3px solid #d66;
+    border-radius: 6px;
+    color: #e88;
+    font-size: 14px;
+    padding: 12px 14px;
+    margin-top: 16px;
+}
+
+.mensagem-erro.visivel {
+    display: block;
+}
+
+.mensagem-sucesso {
+    background-color: rgba(63, 158, 93, 0.12);
+    border: 1px solid rgba(63, 158, 93, 0.4);
+    border-left: 3px solid var(--verde);
+    color: #7c9;
+}
+
+.card {
+    flex-wrap: wrap;
+}
+
+.card-acoes {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    padding-top: 12px;
+    margin-top: 4px;
+    border-top: 1px solid var(--borda);
+}
+
+.botao-acao {
+    background: none;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    color: var(--texto-fraco);
+    padding: 5px 12px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.botao-acao:hover {
+    border-color: var(--texto-fraco);
+    color: var(--texto);
+}
+
+.botao-acao-perigo:hover {
+    border-color: #d66;
+    color: #d66;
+}
+
+.remarcar-caixa {
+    display: none;
+    width: 100%;
+    gap: 8px;
+    padding-top: 10px;
+}
+
+.remarcar-caixa.visivel {
+    display: flex;
+}
+
+.remarcar-caixa input {
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    color: var(--texto);
+    padding: 5px 8px;
+    font-size: 13px;
+    font-family: inherit;
+}
